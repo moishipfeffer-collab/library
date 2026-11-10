@@ -21,9 +21,11 @@ def main():
         elif choise == "7":
             print(get_books_by_author_flow(books))
         elif choise == "8":
+            print("goodby!")
             break
 
-main()
+if __name__ == "__main__":
+    main()
 
 
 

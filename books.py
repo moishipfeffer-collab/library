@@ -3,7 +3,7 @@ from validations import check_book_exists,check_availability
 def get_next_book_id(books):
     return len(books) + 1
 
-def add_book(books:list,name,author,year):
+def  add_book(books:list,name,author,year):
     book_id = get_next_book_id(books)
     new_book = {"id":book_id, "name":name,"author":author,
     "year":year,"available": True}
@@ -14,7 +14,7 @@ def add_book(books:list,name,author,year):
 
 def boroow_book(books,book_id):
     for book in books:
-        if book["id"] == book_id and check_book_exists(books,book):
+        if book["id"] == book_id:
             if check_availability(book):
                 book["available"] = False
                 return True
@@ -23,10 +23,10 @@ def boroow_book(books,book_id):
 def return_book(books,book_id):
     for book in books:
         if book_id == book["id"]:
-            if not check_availability(book) or not check_book_exists(books,book):
+            if check_availability(book):
                 return False
             book["available"] = True
-            return True
+    return True
 
 def get_books_by_author(books, author):
     books_by_author = []

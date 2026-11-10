@@ -12,7 +12,7 @@ def show_menu():
         "8. Exit\n\nChoose an option: ")
         if chise in ["1","2","3","4","5","6","7","8"]:
             return chise
-        print("not valid chise")
+        print("not valid chise\n")
 
 # option 1 show all books
 
@@ -44,7 +44,7 @@ def add_book_flow(books):
 def boroow_book_flow(books):
     book_id = get_book_id()
     if not boroow_book(books,book_id):
-        print("the book is not available or not found")
+        print("the book is not available")
     else:
         print("the book borrowd successfully")
 
@@ -53,7 +53,7 @@ def boroow_book_flow(books):
 def return_book_flow(books):
     book_id = get_book_id()
     if not return_book(books,book_id):
-        print("the book is already available or not found in library")
+        print("the book is already available")
     else:
         print("the book is returnd successfully")
 
